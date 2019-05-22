@@ -8,6 +8,7 @@ let count = 0;
 
 async function peeps() {
     try {
+        // There is a `next` property on each response.  You could loop over them to get the next URL instead of creating all the URL fetches hardcoded.  But I love your use of Promise.all!! Good job.
         const data = await Promise.all([
             fetch('https://swapi.co/api/people/?page=1').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=2').then((response) => response.json()),
@@ -47,6 +48,7 @@ async function peeps() {
             str = ev.target.textContent;
             ev.target.classList.add('bold');
             for (let key in data[count].results) {
+                // It would be best to map over the results instead of hardcoding each one.
                 if (data[count].results[key].name === str) {
                     divright.innerHTML = `<ul id='people'><li><b>name</li></b><li><b>height</li></b><li><b>mass</li></b><li><b>hair_color</li>
                     </b><li><b>skin_color</li></b><li><b>eye_color</li></b><li><b>birth_year</li></b><li><b>gender</li></b><li><b>homeworld</li>
