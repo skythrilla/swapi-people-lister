@@ -8,7 +8,7 @@ let count = 0;
 
 async function peeps() {
     try {
-        var data = await Promise.all([
+        const data = await Promise.all([
             fetch('https://swapi.co/api/people/?page=1').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=2').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=3').then((response) => response.json()),
@@ -26,7 +26,6 @@ async function peeps() {
         divleft.innerHTML = people;
 
         plus.addEventListener("click", ev => {
-            console.log(count);
             if (count >= 0 && count < 8)
                 ++count;
             const people = `<ul>${data[count].results
@@ -36,7 +35,6 @@ async function peeps() {
         });
 
         minus.addEventListener("click", ev => {
-            console.log(count);
             if (count > 0 && count <= 8)
                 --count;
             const people = `<ul>${data[count].results
@@ -47,8 +45,7 @@ async function peeps() {
 
         divleft.addEventListener("click", ev => {
             str = ev.target.textContent;
-            console.log(ev.target);
-
+            ev.target.classList.add('bold');
             for (let key in data[count].results) {
                 if (data[count].results[key].name === str) {
                     divright.innerHTML = `<ul id='people'><li><b>name</li></b><li><b>height</li></b><li><b>mass</li></b><li><b>hair_color</li>
