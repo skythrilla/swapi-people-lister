@@ -9,7 +9,7 @@ let count = 0;
 async function peeps() {
     try {
         var data = await Promise.all([
-            fetch('https://swapi.co/api/people/').then((response) => response.json()),
+            fetch('https://swapi.co/api/people/?page=1').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=2').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=3').then((response) => response.json()),
             fetch('https://swapi.co/api/people/?page=4').then((response) => response.json()),
@@ -27,7 +27,8 @@ async function peeps() {
 
         plus.addEventListener("click", ev => {
             console.log(count);
-            count++;
+            if (count >= 0 && count < 8)
+                ++count;
             const people = `<ul>${data[count].results
           .map(key => `<li>${key.name}</li>`)
           .join("")}</ul>`;
@@ -35,15 +36,15 @@ async function peeps() {
         });
 
         minus.addEventListener("click", ev => {
-            count--;
             console.log(count);
+            if (count > 0 && count <= 8)
+                --count;
             const people = `<ul>${data[count].results
           .map(key => `<li>${key.name}</li>`)
           .join("")}</ul>`;
             divleft.innerHTML = people;
         });
 
-        //--------------------------------
         divleft.addEventListener("click", ev => {
             str = ev.target.textContent;
             console.log(ev.target);
@@ -60,7 +61,6 @@ async function peeps() {
                     <li><a href="${data[count].results[key].url}">${data[count].results[key].url}</a></li></ul>`;
                 }
             }
-            // const html = `<ul><${side}</h3><h3 class = '${isZero && "zero"}'>${amount}</h3></center>`;
         });
     } catch (error) {
         console.log(error);
