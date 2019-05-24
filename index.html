@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Star Wars API</title>
     <script src="main.js" defer></script>
     <style>
-        #people {
-            list-style: none;
-        }
+      #people {
+        list-style: none;
+      }
 
-        .bold {
-            font-weight: bold;
-        }
+      .bold {
+        font-weight: bold;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Star Wars People!</h1>
-    <div style='display:flex'>
-        <div style='flex:1'>
-            <div id='left'>
-            </div>
-        </div>
-        <div style='flex:1'>
-            <div id='midleft'>
-            </div>
-        </div>
-        <div style='flex:1'>
-            <div id='right'>
-            </div>
-        </div>
-        <div style='flex: 1'>
-            <div id="wayright"></div>
-        </div>
+    <button id="dec">Previous Page</button>
+    <button id="inc">Next Page</button>
+    <div style="display:flex">
+      <div style="flex:1">
+        <div id="left"></div>
+      </div>
+      <div style="flex:1">
+        <div id="midleft"></div>
+      </div>
+      <div style="flex:1">
+        <div id="right"></div>
+      </div>
+      <div style="flex: 1">
+        <div id="wayright"></div>
+      </div>
     </div>
-    <button id='dec'>- Previous Page</button>
-    <button id='inc'>Next Page +</button>
-</body>
-
+  </body>
 </html>
