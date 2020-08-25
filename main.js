@@ -10,31 +10,31 @@ let count = 0;
 async function peeps() {
   try {
     const data = await Promise.all([
-      fetch("https://swapi.co/api/people/?page=1").then(response =>
+      fetch("https://swapi.dev/api/people/?page=1").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=2").then(response =>
+      fetch("https://swapi.dev/api/people/?page=2").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=3").then(response =>
+      fetch("https://swapi.dev/api/people/?page=3").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=4").then(response =>
+      fetch("https://swapi.dev/api/people/?page=4").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=5").then(response =>
+      fetch("https://swapi.dev/api/people/?page=5").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=6").then(response =>
+      fetch("https://swapi.dev/api/people/?page=6").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=7").then(response =>
+      fetch("https://swapi.dev/api/people/?page=7").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=8").then(response =>
+      fetch("https://swapi.dev/api/people/?page=8").then(response =>
         response.json()
       ),
-      fetch("https://swapi.co/api/people/?page=9").then(response =>
+      fetch("https://swapi.dev/api/people/?page=9").then(response =>
         response.json()
       )
     ]);
